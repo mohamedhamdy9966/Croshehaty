@@ -10,23 +10,23 @@ export const ProductDisplay = (props) => {
     <div className='productdisplay'>
         <div className="productdisplay_left">
             <div className="productdisplay_img_list">
-                <img src={product.image} alt="image"/>
-                <img src={product.image} alt="image"/>
-                <img src={product.image} alt="image"/>
-                <img src={product.image} alt="image"/>
+                <img src={product.image} alt="image1"/>
+                <img src={product.image} alt="image2"/>
+                <img src={product.image} alt="image3"/>
+                <img src={product.image} alt="image4"/>
             </div>
             <div className="productdisplay_img">
-            <img className='productdisplay_main_img' src={product.image} alt="product.image"/>
+            <img className='productdisplay_main_img' src={product.image} alt="product.image5"/>
             </div>
         </div>
         <div className="productdisplay_right">
             <h2>{product.name}</h2>
             <div className="productdisplay_right_star">
-                <img src={star_dull_icon} alt="image" />
-                <img src={star_dull_icon} alt="image" />
-                <img src={star_dull_icon} alt="image" />
-                <img src={star_dull_icon} alt="image" />
-                <img src={star_icon} alt="image" />
+                <img src={star_dull_icon} alt="image6" />
+                <img src={star_dull_icon} alt="image7" />
+                <img src={star_dull_icon} alt="image8" />
+                <img src={star_dull_icon} alt="image9" />
+                <img src={star_icon} alt="image10" />
                 <p>(101)</p>
             </div>
             <div className="productdisplay_right_price">
