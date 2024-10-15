@@ -1,34 +1,38 @@
-.popular{
+.popular {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     height: 90vh;
 }
- .popular h1{
+.popular h1 {
     color: darkslategray;
     font-size: 50px;
     font-weight: 600;
 }
-.popular hr{
+.popular hr {
     width: 200px;
     height: 6px;
     border-radius: 10px;
     background: #252525;
 }
-.popular_item{
+.popular_item {
     margin-top: 50px;
     display: flex;
     gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.popular_item img{
+.popular_item img {
     width: 300px;
     height: 300px;
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 10px;
 }
-@media (max-width:1280px) {
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1280px) {
     .popular {
         height: 70vh;
     }
@@ -40,11 +44,12 @@
         height: 4px;
     }
     .popular_item {
-        gap: 20px;
+        gap: 30px;
         margin-top: 30px;
     }
 }
-@media (max-width:1024px) {
+
+@media (max-width: 1024px) {
     .popular {
         height: 60vh;
     }
@@ -56,32 +61,49 @@
         height: 3px;
     }
     .popular_item {
-        gap: 15px;
+        gap: 20px;
         margin-top: 20px;
     }
 }
-@media (max-width:800px) {
+
+@media (max-width: 800px) {
     .popular {
-        height: 50vh;
+        height: auto;
         gap: 6px;
     }
     .popular h1 {
-        font-size: 20px;
+        font-size: 24px;
     }
     .popular hr {
         width: 100px;
     }
     .popular_item {
-        gap: 5px;
+        gap: 15px;
+    }
+    .popular_item img {
+        width: 200px;
+        height: 200px;
     }
 }
-@media (max-width:500px) {
+
+@media (max-width: 500px) {
     .popular {
-        height: 90vh;
+        height: auto;
+    }
+    .popular h1 {
+        font-size: 18px;
+    }
+    .popular hr {
+        width: 80px;
     }
     .popular_item {
         display: grid;
         gap: 20px;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+        margin-top: 15px;
+    }
+    .popular_item img {
+        width: 150px;
+        height: 150px;
     }
 }
