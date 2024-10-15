@@ -64,7 +64,7 @@
 .hero_right img {
     width: 35vw; /* Use vw for responsive width */
     max-width: 600px;
-    height: auto; /* Maintain aspect ratio */
+    height: 500px; /* Maintain aspect ratio */
     border-radius: 10px;
 }
 
