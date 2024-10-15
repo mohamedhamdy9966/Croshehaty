@@ -1,146 +1,175 @@
-.hero{
+.hero {
     height: 100vh;
     display: flex;
     justify-content: center;
-    background: linear-gradient(180deg , #fde1ff , #e1ffea22 60%);
+    align-items: center; /* Center vertically */
+    background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
+    padding: 0 2rem; /* Add padding for better spacing on smaller screens */
 }
-.hero_left{
+
+.hero_left {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
-    padding-left:180px;
+    gap: 1.25rem; /* Use rem for scalable spacing */
+    padding-left: 12vw; /* vw scales with the viewport width */
     line-height: 1.1;
 }
-.hero_left h2{
+
+.hero_left h2 {
     color: darkslategray;
-    font-size: 26px;
+    font-size: 2rem; /* Responsive font size */
     font-weight: 600;
 }
-.hero_left p{
+
+.hero_left p {
     color: darkslategray;
-    font-size: 100px;
+    font-size: 8vw; /* Use vw to dynamically resize the heading */
     font-weight: 700;
 }
-.hero_hand_icon{
+
+.hero_hand_icon {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 1.25rem;
 }
-.hero_hand_icon img{
-    width: 105px;
+
+.hero_hand_icon img {
+    width: 8vw; /* Use vw to scale hand icon image */
+    max-width: 105px; /* Set max-width to avoid over-scaling */
 }
-.hero_latest_btn{
+
+.hero_latest_btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    width: 310px;
-    height: 70px;
+    gap: 1rem;
+    width: 22vw; /* Dynamically size button width */
+    max-width: 310px; /* Ensure button does not grow too large */
+    height: 5vh;
     border-radius: 75px;
-    margin-top: 30px;
+    margin-top: 1.5rem;
     background: brown;
     color: aliceblue;
-    font-size: 22px;
+    font-size: 1.5rem;
     font-weight: 500;
     cursor: pointer;
 }
-.hero_latest_btn img{
-    width: 20px;
+
+.hero_latest_btn img {
+    width: 1.5rem; /* Use rem for icon inside button */
 }
-.hero_right img{
-    width: 600px;
-    height: 600px;
+
+.hero_right img {
+    width: 35vw; /* Use vw for responsive width */
+    max-width: 600px;
+    height: auto; /* Maintain aspect ratio */
     border-radius: 10px;
 }
-@media (max-width:1280px) {
+
+/* Tablet screens (max-width: 1280px) */
+@media (max-width: 1280px) {
     .hero_left {
-        padding-left: 100px;
+        padding-left: 8vw;
     }
     .hero_left h2 {
-        font-size: 22px;
+        font-size: 1.75rem;
     }
     .hero_left p {
-        font-size: 60px;
+        font-size: 6vw;
     }
     .hero_hand_icon img {
-        width: 80px;
+        width: 7vw;
     }
     .hero_latest_btn {
-        gap: 10px;
-        width: 250px;
-        height: 60px;
-        margin-top: 20px;
-        font-size: 18px;
+        width: 20vw;
+        max-width: 250px;
+        height: 6vh;
+        font-size: 1.25rem;
     }
     .hero_right img {
-        width: 500px;
+        width: 30vw;
+        max-width: 500px;
     }
 }
-@media (max-width:1024px) {
+
+/* Smaller tablet screens (max-width: 1024px) */
+@media (max-width: 1024px) {
     .hero_left {
-        padding-left: 80px;
+        padding-left: 6vw;
     }
     .hero_left h2 {
-        font-size: 20px;
+        font-size: 1.5rem;
     }
     .hero_left p {
-        font-size: 50px;
+        font-size: 5vw;
     }
     .hero_hand_icon img {
-        width: 65px;
+        width: 6vw;
     }
     .hero_latest_btn {
-        width: 220px;
-        height: 50px;
-        font-size: 16px;
+        width: 18vw;
+        max-width: 220px;
+        height: 5vh;
+        font-size: 1.125rem;
     }
     .hero_right img {
-        width: 400px;
+        width: 25vw;
+        max-width: 400px;
     }
 }
-@media (max-width:800px) {
+
+/* Mobile screens (max-width: 800px) */
+@media (max-width: 800px) {
     .hero_left {
-        padding-left: 30px;
+        padding-left: 4vw;
     }
     .hero_left h2 {
-        font-size: 16px;
+        font-size: 1.25rem;
     }
     .hero_left p {
-        font-size: 40px;
+        font-size: 4vw;
     }
     .hero_hand_icon img {
-        width: 50px;
+        width: 5vw;
     }
     .hero_latest_btn {
-        width: 175px;
-        height: 40px;
-        font-size: 13px;
+        width: 15vw;
+        max-width: 175px;
+        height: 4vh;
+        font-size: 1rem;
     }
     .hero_right img {
-        width: 300px;
+        width: 20vw;
+        max-width: 300px;
     }
 }
-@media (max-width:500px) {
+
+/* Very small mobile screens (max-width: 500px) */
+@media (max-width: 500px) {
     .hero {
         flex-direction: column;
+        align-items: center;
+        padding: 0 1rem;
     }
-    .hero_right{
+    .hero_right {
         display: none;
     }
     .hero_left h2 {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
     .hero_left p {
-        font-size: 50px;
+        font-size: 6vw;
     }
     .hero_hand_icon img {
-        width: 55px;
+        width: 4.5vw;
+        max-width: 55px;
     }
     .hero_latest_btn {
-        width: 200px;
-        height: 45px;
-        font-size: 14px;
+        width: 40vw;
+        max-width: 200px;
+        height: 5vh;
+        font-size: 1rem;
     }
 }

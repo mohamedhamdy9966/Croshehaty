@@ -1,44 +1,79 @@
-.descriptionbox{
-    margin: 120px 170px;
+.descriptionbox {
+    margin: 5vh 10vw; /* Using vw and vh for responsive margins */
 }
-.descriptionbox_navigator{
+
+.descriptionbox_navigator {
     display: flex;
+    flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+    gap: 1rem;
 }
-.descriptionbox_nav_box{
+
+.descriptionbox_nav_box {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: 1rem; /* Use rem for responsive font sizing */
     font-weight: 600;
-    width: 171px;
-    height: 70px;
+    width: 10rem; /* Set width in rem for scalability */
+    height: 4.5rem;
     border: 1px solid #d0d0d0;
     border-radius: 4px;
 }
-.descriptionbox_nav_box .fade{
+
+.descriptionbox_nav_box .fade {
     background: #fbfbfb;
     color: #555;
 }
-.descriptionbox_description{
+
+.descriptionbox_description {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 2rem;
     border: 1px solid #d0d0d0;
-    outline: 0;
-    padding: 48px;
-    padding-bottom: 70px;
+    padding: 3rem;
+    padding-bottom: 4rem;
     border-radius: 5px;
+    font-size: 1rem; /* Base font size set in rem for better scaling */
 }
-@media (max-width:1280px) {
+
+/* Media Query for large screens */
+@media (max-width: 1280px) {
     .descriptionbox {
-        margin: 60px;
+        margin: 5vh 5vw; /* Adjust margins for medium screens */
     }
 }
-@media (max-width:800px) {
+
+/* Media Query for tablets */
+@media (max-width: 800px) {
     .descriptionbox {
-        margin: 60px 20px;
+        margin: 3vh 3vw; /* Further reduce margins for smaller screens */
+    }
+    .descriptionbox_nav_box {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+        width: 8rem;
+        height: 4rem;
     }
     .descriptionbox_description {
-        font-size: 14px;
+        font-size: 0.9rem; /* Reduce font size for better readability */
+        padding: 2rem;
+        padding-bottom: 3rem;
+    }
+}
+
+/* Media Query for mobile screens */
+@media (max-width: 500px) {
+    .descriptionbox {
+        margin: 2vh 2vw; /* Narrower margins for mobile */
+    }
+    .descriptionbox_nav_box {
+        width: 7rem;
+        height: 3.5rem;
+        font-size: 0.8rem; /* Smaller font size on mobile */
+    }
+    .descriptionbox_description {
+        font-size: 0.85rem; /* Smaller font size for readability on mobile */
+        padding: 1.5rem;
+        padding-bottom: 2rem;
+        gap: 1.5rem;
     }
 }

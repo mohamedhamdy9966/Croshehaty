@@ -1,9 +1,9 @@
 .navs {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* Adjusted for better spacing */
+    align-items: center;
     padding: 15px 0;
     box-shadow: 0 1px 3px -2px black;
-    align-items: center;
 }
 
 .nav_logo {
@@ -97,9 +97,12 @@
 
 .nav-dropdown {
     display: none;
+    font-size: 30px;
+    cursor: pointer;
 }
 
-@media(max-width: 1280px) {
+/* Tablet and smaller desktops */
+@media (max-width: 1280px) {
     .navs {
         padding: 12px 50px;
     }
@@ -127,7 +130,8 @@
     }
 }
 
-@media(max-width: 1024px) {
+/* Smaller tablets and larger mobile screens */
+@media (max-width: 1024px) {
     .navs {
         padding: 12px 30px;
     }
@@ -149,46 +153,57 @@
     }
 }
 
-@media(max-width: 800px) {
+/* Mobile screens */
+@media (max-width: 800px) {
     .navs {
         padding: 10px 0;
+        justify-content: space-between;
     }
-    .nav-dropdown {
-        display: block;
-        width: 30px;
-        transform: rotate(-90deg);
-        transition: 0.5s;
-        cursor: pointer;
+    .nav_logo {
+        margin-left: 10px;
+    }
+    .nav_login_cart {
+        margin-right: 10px;
     }
     .nav_menu {
         display: none;
-        height: 80px;
-        width: 100%;
+        flex-direction: column;
         position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
         background-color: white;
         justify-content: center;
-        top: 70px;
+        align-items: center;
+        gap: 20px;
+        z-index: 1;
     }
-    .nav-menu-visible {
+    .nav_menu.nav-menu-visible {
         display: flex;
     }
-    .nav-dropdown.open {
+    .nav-dropdown {
+        display: block;
+        margin-right: 20px;
         transform: rotate(90deg);
     }
+    .nav-dropdown.open {
+        transform: rotate(-90deg);
+    }
 }
-@media (max-width:500px) {
-    .navs{
+
+@media (max-width: 500px) {
+    .navs {
         padding: 8px 0;
         gap: 0;
     }
-    .nav_logo{
+    .nav_logo {
         transform: scale(0.8);
     }
-    .nav_menu{
-        height: 70px;
+    .nav_menu {
         top: 50px;
+        height: 70px;
     }
-    .nav_login_cart{
+    .nav_login_cart {
         transform: scale(0.8);
     }
 }
