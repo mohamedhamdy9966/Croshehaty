@@ -1,14 +1,31 @@
-import React from 'react'
-import './breadcrum.css'
-import arrow_icon from '../Assests/right_arrow.png'
+import "./breadcrum.css";
+import arrow_icon from "../Assests/right_arrow.png";
+
 export const Breadcrum = (props) => {
-  const {product} = props;
-    return (
-    <div className='breadcrum'>
-        Home <img src={arrow_icon} alt="arrow_icon"/>
-        Shop <img src={arrow_icon} alt="arrow_icon" /> {product.category} <img src={arrow_icon} alt="arrow_icon" /> {product.name}
-        
-    </div>
-  )
-}
-export default Breadcrum ;
+  const { product } = props;
+
+  return (
+    <nav className="breadcrum" aria-label="Breadcrumb">
+      <span className="breadcrumb-item" role="link" tabIndex="0">
+        Home
+      </span>
+      <img src={arrow_icon} alt="Right arrow" aria-hidden="true" />
+
+      <span className="breadcrumb-item" role="link" tabIndex="0">
+        Shop
+      </span>
+      <img src={arrow_icon} alt="Right arrow" aria-hidden="true" />
+
+      <span className="breadcrumb-item" role="link" tabIndex="0">
+        {product.category}
+      </span>
+      <img src={arrow_icon} alt="Right arrow" aria-hidden="true" />
+
+      <span className="current-page" aria-current="page">
+        {product.name}
+      </span>
+    </nav>
+  );
+};
+
+export default Breadcrum;

@@ -1,35 +1,136 @@
-.breadcrum img {
-    width: 1.5rem; /* Use rem for better scalability */
+.breadcrum {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #5e5e5e;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 5vh 10vw;
+  text-transform: capitalize;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #f9f3f0 0%, #fff8f5 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0e6e0;
+  transition: all 0.3s ease;
 }
 
-.breadcrum {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem; /* Using rem for gap */
-    color: #5e5e5e;
-    font-size: 1rem; /* Base font size set in rem for scalability */
-    font-weight: 700;
-    margin: 5vh 10vw; /* Vertical and horizontal margin set in vw and vh for flexibility */
-    text-transform: capitalize;
+.breadcrum:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.breadcrum img {
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.breadcrum:hover img {
+  opacity: 0.9;
+}
+
+.breadcrum span {
+  color: #d4a5a5;
+  transition: color 0.3s ease;
+}
+
+.breadcrum span:hover {
+  color: #b87c7c;
+}
+
+.breadcrum .current-page {
+  color: #8b6b61;
+  font-weight: 700;
+  position: relative;
+}
+
+.breadcrum .current-page::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #d4a5a5, #8b6b61);
+  border-radius: 1px;
 }
 
 @media (max-width: 1280px) {
-    .breadcrum {
-        font-size: 0.9rem;
-        margin: 4vh 8vw; /* Slightly reduce the margin */
-    }
+  .breadcrum {
+    font-size: 0.9rem;
+    margin: 4vh 8vw;
+    padding: 0.875rem 1.25rem;
+    border-radius: 10px;
+  }
 }
 
 @media (max-width: 1024px) {
-    .breadcrum {
-        font-size: 0.85rem;
-        margin: 3vh 5vw;
-    }
+  .breadcrum {
+    font-size: 0.85rem;
+    margin: 3vh 5vw;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+  }
+
+  .breadcrum img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
 }
 
 @media (max-width: 800px) {
-    .breadcrum {
-        font-size: 0.8rem;
-        margin: 2vh 3vw;
-    }
+  .breadcrum {
+    font-size: 0.8rem;
+    margin: 2vh 3vw;
+    padding: 0.625rem 0.875rem;
+    border-radius: 6px;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .breadcrum img {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+/* Animation for breadcrumb items */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.breadcrum > * {
+  animation: fadeInUp 0.4s ease forwards;
+  opacity: 0;
+}
+
+.breadcrum > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.breadcrum > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.breadcrum > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.breadcrum > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.breadcrum > *:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.breadcrum > *:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.breadcrum > *:nth-child(7) {
+  animation-delay: 0.7s;
 }

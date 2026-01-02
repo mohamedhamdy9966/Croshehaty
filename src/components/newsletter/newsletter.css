@@ -1,157 +1,445 @@
 .newsletter {
-    width: 65%;
-    height: 40vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    padding: 0px 140px;
-    margin-bottom: 150px;
-    background: linear-gradient(170deg, #fde1ff, #e1ffea22 60%);
-    gap: 10px;
-    border-radius: 10px;
+  width: 75%;
+  max-width: 1200px;
+  height: auto;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 6rem auto;
+  padding: 4rem 3rem;
+  background: linear-gradient(135deg, #f9f3f0 0%, #fff8f5 100%);
+  gap: 1.5rem;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 2px solid #f0e6e0;
 }
+
+/* Decorative crochet elements */
+.newsletter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+      circle at 20% 30%,
+      rgba(212, 165, 165, 0.08) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(139, 107, 97, 0.08) 0%,
+      transparent 40%
+    ),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 15px,
+      rgba(240, 230, 224, 0.1) 15px,
+      rgba(240, 230, 224, 0.1) 30px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.newsletter::after {
+  content: "🧶 🧵 ✨";
+  position: absolute;
+  font-size: 4rem;
+  opacity: 0.05;
+  bottom: 20px;
+  right: 30px;
+  transform: rotate(-10deg);
+  animation: floatDecorations 15s infinite linear;
+}
+
+@keyframes floatDecorations {
+  0% {
+    transform: rotate(-10deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-10deg) translateY(-20px);
+  }
+  100% {
+    transform: rotate(-10deg) translateY(0);
+  }
+}
+
+.newsletter > * {
+  position: relative;
+  z-index: 1;
+}
+
 .newsletter h2 {
-    color: #454545;
-    font-size: 55px;
-    font-weight: 600;
+  color: #8b6b61;
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: "Georgia", serif;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+  position: relative;
+  display: inline-block;
 }
+
+.newsletter h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #d4a5a5, #b87c7c);
+  border-radius: 2px;
+}
+
 .newsletter p {
-    color: #454545;
-    font-size: 20px;
+  color: #5e5e5e;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
-.newsletter div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #fff;
-    width: 730px;
-    height: 70px;
-    border-radius: 90px;
-    border: 1px solid #e3e3e3;
-    outline: none;
+
+.newsletter .emails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  width: 100%;
+  max-width: 800px;
+  height: 75px;
+  border-radius: 50px;
+  border: 2px solid #f0e6e0;
+  outline: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
+
+.newsletter .emails:focus-within {
+  border-color: #d4a5a5;
+  box-shadow: 0 10px 25px rgba(212, 165, 165, 0.2);
+  transform: translateY(-2px);
+}
+
 .newsletter input {
-    width: 500px;
-    margin-left: 30px;
-    border: none;
-    outline: none;
-    color: #616161;
-    font-family: Poppins, sans-serif;
-    font-size: 16px;
+  flex: 1;
+  margin-left: 2rem;
+  border: none;
+  outline: none;
+  color: #5e5e5e;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: transparent;
+  padding-right: 1rem;
+  min-width: 0;
 }
+
+.newsletter input::placeholder {
+  color: #b8b8b8;
+  font-weight: 400;
+}
+
 .newsletter .emails button {
-    width: 210px;
-    height: 70px;
-    border-radius: 90px;
-    background: #000;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
+  width: 220px;
+  height: 100%;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #d4a5a5 0%, #b87c7c 100%);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(212, 165, 165, 0.3);
+}
+
+.newsletter .emails button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #b87c7c 0%, #a06969 100%);
+  z-index: 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.newsletter .emails button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(212, 165, 165, 0.4);
+}
+
+.newsletter .emails button:hover::before {
+  transform: translateX(0);
+}
+
+.newsletter .emails button span {
+  position: relative;
+  z-index: 1;
+}
+
+.newsletter .emails button:active {
+  transform: scale(0.98);
+}
+
+/* Success/error message */
+.newsletter_message {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  font-weight: 500;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.newsletter_message.success {
+  background: rgba(212, 165, 165, 0.1);
+  color: #8b6b61;
+  border: 1px solid #d4a5a5;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.newsletter_message.error {
+  background: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.newsletter_privacy {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #888;
+  text-align: center;
+  max-width: 600px;
+}
+
+.newsletter_privacy a {
+  color: #b87c7c;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.newsletter_privacy a:hover {
+  text-decoration: underline;
 }
 
 /* Media Queries for Responsive Design */
 @media (max-width: 1280px) {
-    .newsletter {
-        padding: 0px 80px;
-        margin-bottom: 120px;
-    }
-    .newsletter h2 {
-        font-size: 36px;
-    }
-    .newsletter p {
-        font-size: 16px;
-    }
-    .newsletter div {
-        width: 600px;
-        height: 60px;
-    }
-    .newsletter input {
-        width: 400px;
-    }
-    .newsletter button {
-        width: 160px;
-        height: 60px;
-    }
+  .newsletter {
+    width: 85%;
+    padding: 3.5rem 2.5rem;
+    margin: 5rem auto;
+    border-radius: 25px;
+  }
+
+  .newsletter h2 {
+    font-size: 3rem;
+  }
+
+  .newsletter p {
+    font-size: 1.2rem;
+  }
+
+  .newsletter .emails {
+    max-width: 700px;
+    height: 65px;
+  }
+
+  .newsletter input {
+    font-size: 1.1rem;
+    margin-left: 1.5rem;
+  }
+
+  .newsletter .emails button {
+    width: 200px;
+    font-size: 1.2rem;
+  }
+
+  .newsletter::after {
+    font-size: 3.5rem;
+  }
 }
 
 @media (max-width: 1024px) {
-    .newsletter {
-        margin-bottom: 60px;
-    }
-    .newsletter h2 {
-        font-size: 30px;
-    }
-    .newsletter p {
-        font-size: 14px;
-    }
-    .newsletter div {
-        width: 500px;
-        height: 50px;
-    }
-    .newsletter input {
-        width: 300px;
-        font-size: 14px;
-    }
-    .newsletter button {
-        width: 120px;
-        height: 50px;
-        font-size: 14px;
-    }
+  .newsletter {
+    width: 90%;
+    padding: 3rem 2rem;
+    margin: 4rem auto;
+    border-radius: 22px;
+  }
+
+  .newsletter h2 {
+    font-size: 2.5rem;
+  }
+
+  .newsletter p {
+    font-size: 1.1rem;
+    max-width: 500px;
+  }
+
+  .newsletter .emails {
+    max-width: 600px;
+    height: 60px;
+  }
+
+  .newsletter input {
+    font-size: 1rem;
+    margin-left: 1.5rem;
+  }
+
+  .newsletter .emails button {
+    width: 180px;
+    font-size: 1.1rem;
+  }
+
+  .newsletter::after {
+    font-size: 3rem;
+    bottom: 15px;
+    right: 20px;
+  }
 }
 
 @media (max-width: 800px) {
-    .newsletter {
-        margin-bottom: 30px;
-        height: 35vh;
-        padding: 0 40px;
-    }
-    .newsletter h2 {
-        font-size: 24px;
-    }
-    .newsletter p {
-        font-size: 12px;
-    }
-    .newsletter div {
-        width: 400px;
-        height: 40px;
-    }
-    .newsletter input {
-        width: 200px;
-        font-size: 13px;
-    }
-    .newsletter button {
-        width: 100px;
-        height: 40px;
-        font-size: 13px;
-    }
+  .newsletter {
+    width: 92%;
+    padding: 2.5rem 1.5rem;
+    margin: 3rem auto;
+    min-height: 45vh;
+    border-radius: 20px;
+  }
+
+  .newsletter h2 {
+    font-size: 2.2rem;
+  }
+
+  .newsletter p {
+    font-size: 1rem;
+    max-width: 450px;
+  }
+
+  .newsletter .emails {
+    flex-direction: column;
+    height: auto;
+    border-radius: 20px;
+    padding: 0.5rem;
+    max-width: 500px;
+  }
+
+  .newsletter input {
+    width: 100%;
+    margin: 0;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    border-bottom: 1px solid #f0e6e0;
+  }
+
+  .newsletter .emails button {
+    width: 100%;
+    height: 55px;
+    border-radius: 15px;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .newsletter::after {
+    font-size: 2.5rem;
+    bottom: 10px;
+    right: 15px;
+  }
+
+  .newsletter_privacy {
+    font-size: 0.85rem;
+    padding: 0 1rem;
+  }
 }
 
 @media (max-width: 500px) {
-    .newsletter {
-        width: 90%;
-        height: 25vh;
-        margin-bottom: 20px;
-        padding: 0 20px;
-    }
-    .newsletter h2 {
-        font-size: 18px;
-    }
-    .newsletter p {
-        font-size: 12px;
-    }
-    .newsletter div {
-        width: 100%;
-        height: 40px;
-    }
-    .newsletter input {
-        width: 130px;
-        font-size: 12px;
-    }
-    .newsletter button {
-        width: 80px;
-        height: 40px;
-        font-size: 12px;
-    }
+  .newsletter {
+    width: 95%;
+    padding: 2rem 1rem;
+    margin: 2.5rem auto;
+    min-height: 40vh;
+    border-radius: 18px;
+  }
+
+  .newsletter h2 {
+    font-size: 1.8rem;
+  }
+
+  .newsletter h2::after {
+    width: 80px;
+    height: 3px;
+    bottom: -8px;
+  }
+
+  .newsletter p {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  .newsletter .emails {
+    border-radius: 15px;
+    max-width: 100%;
+  }
+
+  .newsletter input {
+    padding: 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .newsletter .emails button {
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .newsletter::after {
+    font-size: 2rem;
+    bottom: 8px;
+    right: 10px;
+  }
+
+  .newsletter_privacy {
+    font-size: 0.8rem;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Animation for newsletter appearance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.newsletter {
+  animation: fadeInUp 0.6s ease-out;
 }
